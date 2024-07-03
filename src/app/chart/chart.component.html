@@ -1,0 +1,13 @@
+<form [formGroup]="form" >
+  <select formControlName="indexFundIndex" class="form-control" (change)="fetchSingleChartData()">
+    <option *ngFor="let fund of indexFunds; index as i" [value]="i">{{fund.label}}</option>
+  </select>
+</form>
+<button (click)="fetchMultiChartData()">Multi Chart</button>
+<div style="width: 1400px; height: 900px;">
+  <canvas id="canvas"></canvas>
+</div>
+
+<div style="width: 1400px; height: 900px;">
+  <canvas id="multiPlot"></canvas>
+</div>
